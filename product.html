@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Products - Healthofy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <nav>
+        <div class="logo"><img src='https://www.shutterstock.com/image-vector/dog-cat-pet-animal-logo-600nw-2447119691.jpg' alt="Healthofy Logo"></div> 
+        <div class="text">
+            <a href="index.html">Healthofy</a>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="appointment.html">Book appointment</a></li>
+            <li><a href="breed.html">Breed</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+        <div><a href="">Sign in</a></div>
+        <div id="cart-icon-container">
+            <a href="cart.html" id="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <div id="cart-overlay" class="cart-overlay">
+        <div class="cart-content">
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <div class="summary-item">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">Rs. 0</span>
+                </div>
+                <div class="summary-item">
+                    <span>Tax (5%):</span>
+                    <span id="cart-tax">Rs. 0</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total:</span>
+                    <span id="cart-total">Rs. 0</span>
+                </div>
+            </div>
+            <div class="cart-actions">
+                <button id="view-cart-btn" class="btn">View Cart</button>
+                <button id="checkout-btn" class="btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="products">
+            <h1>Pet Care Products</h1>
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="food">Food</button>
+                <button class="filter-btn" data-filter="toys">Toys</button>
+                <button class="filter-btn" data-filter="accessories">Accessories</button>
+            </div>
+            <div class="product-grid">
+                <div class="product-card" data-category="food">
+                    <img src="https://i.pinimg.com/originals/51/b2/57/51b2573004596973882f2d628748416f.jpg" alt="Premium Dog Food">
+                    <h3>Premium Dog Food</h3>
+                    <p>High-quality nutrition for your canine friend.</p>
+                    <span class="price">Rs.2349</span>
+                    <button class="btn add-to-cart" data-id="1" data-name="Premium Dog Food" data-price="2349" data-image="https://i.pinimg.com/originals/51/b2/57/51b2573004596973882f2d628748416f.jpg">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="toys">
+                    <img src="https://cdn.shopify.com/s/files/1/0582/8349/1478/files/Smart_Interactive_Cat_toys_by_Goofy_Tails_Best_cat_toys_480x480.jpg?v=1663588759" alt="Interactive Cat Toy">
+                    <h3>Interactive Cat Toy</h3>
+                    <p>Keep your feline entertained for hours.</p>
+                    <span class="price">Rs.1256</span>
+                    <button class="btn add-to-cart" data-id="2" data-name="Interactive Cat Toy" data-price="1256" data-image="https://cdn.shopify.com/s/files/1/0582/8349/1478/files/Smart_Interactive_Cat_toys_by_Goofy_Tails_Best_cat_toys_480x480.jpg?v=1663588759">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="accessories">
+                    <img src="https://m.media-amazon.com/images/I/71O1bDr8jtL._AC_UF350,350_QL80_.jpg" alt="Adjustable Dog Collar">
+                    <h3>Adjustable Dog Collar</h3>
+                    <p>Comfortable and stylish collar for your dog.</p>
+                    <span class="price">Rs.799</span>
+                    <button class="btn add-to-cart" data-id="3" data-name="Adjustable Dog Collar" data-price="799" data-image="https://m.media-amazon.com/images/I/71O1bDr8jtL._AC_UF350,350_QL80_.jpg">Add to Cart</button>
+                </div>
+                <!-- Add more product cards here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Healthofy. All rights reserved.</p>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script src="product.js"></script>
+</body>
+</html>

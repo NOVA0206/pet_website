@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Health Blog - Healthofy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog.css">
+    <style>
+        /* Existing styles */
+/* ... */
+
+.write-blog {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.write-blog h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+#blog-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#blog-form input,
+#blog-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#blog-form textarea {
+    min-height: 200px;
+    resize: vertical;
+}
+
+#blog-form .btn {
+    align-self: flex-start;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#blog-form .btn:hover {
+    background-color: #45a049;
+}
+
+.file-input-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.file-input-wrapper input[type=file] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-input-wrapper label {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.file-input-wrapper label:hover {
+    background-color: #45a049;
+}
+
+#image-preview {
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+#image-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <nav>
+                <div class="logo"><image src='https://www.shutterstock.com/image-vector/dog-cat-pet-animal-logo-600nw-2447119691.jpg'></div> 
+                <div class="text">
+                    <a href="index.html">Healthofy</a>
+                </div>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="appointment.html">Book appointment</a></li>
+                    <li><a href="breed.html">Breed</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+                <div><a href="LogoutServlet">Logout</a></div>
+                <div><a href="cart.html">Bag</a></div>                     
+            </nav>
+
+    <main>
+        <section class="blog">
+            <h1>Pet Health Blog</h1>
+            <div class="blog-grid">
+                <article class="blog-post">
+                    <img src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_700,h_525/https://puppyintraining.com/wp-content/uploads/golden-retriever-food-700x525.jpg" alt="Healthy Diet for Dogs">
+                    <h2>The Importance of a Balanced Diet for Your Dog</h2>
+                    <p class="post-meta">By Mukesh Pathak | May 15, 2024</p>
+                    <p>Learn about the essential nutrients your dog needs for optimal health and how to create a balanced meal plan.</p>
+                    <a href="https://www.dailypaws.in/balanced-diet-for-dogs/" class="btn read-more">Read More</a>
+                </article>
+                <article class="blog-post">
+                    <img src="https://www.houndtherapy.com/wp-content/uploads/2024/04/faq-cat-haircut-1024x702.jpg" alt="Cat Grooming Tips">
+                    <h2>Essential Grooming Tips for Your Feline Friend</h2>
+                    <p class="post-meta">By my lovely feline | Nov 18, 2024</p>
+                    <p>Discover the best practices for keeping your cat's coat healthy and reducing hairballs.</p>
+                    <a href="https://mylovelyfeline.com/blogs/content/top-10-essential-tips-for-feline-grooming-and-hygiene#:~:text=Top%2010%20Essential%20Tips%20for%20Feline%20Grooming%20and,8%208.%20Check%20for%20Parasites%20...%20More%20items" class="btn read-more">Read More</a>
+                </article>
+                <article class="blog-post">
+                    <img src="https://images.ctfassets.net/rt5zmd3ipxai/2q5hqGtiHN8prcEQfwrqRN/6fa8e86284162e2db0237142073aa14a/Hero.png" alt="Pet Dental Care">
+                    <h2>The Importance of Dental Care for Pets</h2>
+                    <p class="post-meta">By Shardha Kadam | 10 Apr 2024</p>
+                    <p>Learn why dental health is crucial for your pet's overall well-being and how to maintain it.</p>
+                    <a href="https://captain-india.com/blogs/pet-safety/the-importance-of-dental-care-for-pets-ensuring-healthy-teeth-and-gums" class="btn read-more">Read More</a>
+                </article>
+            </div>
+        </section>
+        <section class="write-blog">
+            <h2>Write a Blog Post</h2>
+            <form id="blog-form" action="SubmitBlogServlet" method="POST" enctype="multipart/form-data">
+                <input type="text" id="blog-title" placeholder="Blog Title" required>
+                <input type="text" id="author-name" placeholder="Author Name" required>
+                <textarea id="blog-content" placeholder="Write your blog post here..." required></textarea>
+                <div class="file-input-wrapper">
+                    <input type="file" name="blog-image" id="blog-image" accept="image/*">
+                    <label for="blog-image"  class="btn">Choose Image</label>
+                </div>
+                <div id="image-preview"></div>
+                <button type="submit" class="btn">Submit Blog Post</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Healthofy. All rights reserved.</p>
+    </footer>
+
+    <script src="blog.js"></script>
+</body>
+</html>

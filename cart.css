@@ -1,0 +1,137 @@
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.cart-overlay.active {
+    right: 0;
+}
+
+.cart-content {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-content h2 {
+    margin-bottom: 20px;
+}
+
+#cart-items {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.item-price {
+    color: #666;
+}
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.quantity-btn {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.item-quantity input {
+    width: 40px;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.remove-item {
+    color: #ff0000;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.cart-summary {
+    margin-top: 20px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.total {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+#cart-icon-container {
+    position: relative;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ff0000;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+}

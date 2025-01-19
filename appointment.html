@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Healthofy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="appointment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <nav>
+                <div class="logo"><image src='https://www.shutterstock.com/image-vector/dog-cat-pet-animal-logo-600nw-2447119691.jpg'></div> 
+                <div class="text">
+                    <a href="index.html">Healthofy</a>
+                </div>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="appointment.html">Book appointment</a></li>
+                    <li><a href="breed.html">Breed</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+                <div><a href="LogoutServlet">Logout</a></div>
+                <div><a href="cart.html">Bag</a></div>                     
+            </nav>
+
+    <main>
+        <section class="appointment">
+            <h1>Book an Appointment</h1>
+            <form id="appointment-form" method="POST" action="BookAppointmentServlet">
+                <div class="form-group">
+                    <label for="pet-name">Pet's Name</label>
+                    <input type="text" id="pet-name" name="pet-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="pet-type">Pet Type</label>
+                    <select id="pet-type" name="pet-type" required>
+                        <option value="">Select pet type</option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="owner-name">Owner's Name</label>
+                    <input type="text" id="owner-name" name="owner-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Preferred Time</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="reason">Reason for Visit</label>
+                    <textarea id="reason" name="reason" required></textarea>
+                </div>
+                <button type="submit" class="btn">Book Appointment</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Healthofy. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
